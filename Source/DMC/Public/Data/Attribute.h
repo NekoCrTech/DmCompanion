@@ -31,40 +31,28 @@ struct FAttributeScore  : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
 	TMap<FGameplayTag, int32> AttributeBonuses;
+};
 
-	// Function to calculate total attribute value
-	int32 GetTotalValue() const
-	{
-		int32 Bonus = 0;
-		for (const TTuple<FGameplayTag, int32>& ThisBonus : AttributeBonuses)
-		{
-			Bonus += ThisBonus.Value;
-		}
-		return BaseValue + Bonus;
-	}
+USTRUCT(BlueprintType)
+struct FAttributes : public FTableRowBase
+{
+	GENERATED_BODY()
 
-	// Function to calculate attribute modifier
-	int32 GetModifier() const
-	{
-		return (GetTotalValue() - 10) / 2;
-	}
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Strength;
 
-	// Add attribute bonus
-	void AddAttributeBonus(FGameplayTag BonusTag, int32 BonusValue)
-	{
-		if (AttributeBonuses.Contains(BonusTag))
-		{
-			AttributeBonuses[BonusTag] += BonusValue;
-		}
-		else
-		{
-			AttributeBonuses.Add(BonusTag, BonusValue);
-		}
-	}
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Dexterity;
 
-	// Remove attribute bonus
-	void RemoveAttributeBonus(FGameplayTag BonusTag)
-	{
-		AttributeBonuses.Remove(BonusTag);
-	}
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Constitution;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Intelligence;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Wisdom;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Charisma;
 };

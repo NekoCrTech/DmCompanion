@@ -30,6 +30,9 @@ struct FCharacterRace : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	ECharacterRace Race = ECharacterRace::Dragonborn;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString SubRace = FString("");
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString Info;
