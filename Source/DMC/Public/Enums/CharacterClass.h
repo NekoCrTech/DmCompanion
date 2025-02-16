@@ -7,6 +7,7 @@
 UENUM(BlueprintType)
 enum class ECharacterClass : uint8
 {
+	Artificer	UMETA(DisplayName = "Artificer"),
 	Barbarian   UMETA(DisplayName = "Barbarian"),
 	Bard        UMETA(DisplayName = "Bard"),
 	Cleric      UMETA(DisplayName = "Cleric"),

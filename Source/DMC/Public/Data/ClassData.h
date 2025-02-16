@@ -29,10 +29,19 @@ struct FCharacterClassData : public FTableRowBase
 	ECharacterClass ClassType;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
+	FText Description;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
 	int32 HitDie;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
-	TArray<FGameplayTag> ClassProficiencies;
+	FText ArmorAndWeaponProf;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
+	UTexture2D* Icon;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
+	TArray<FGameplayTag> SavingThrowProficiencies;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
 	TArray<FFeaturesAtLevel> FeaturesAtLevels;
