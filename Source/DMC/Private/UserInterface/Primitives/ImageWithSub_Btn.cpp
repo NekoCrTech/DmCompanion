@@ -10,6 +10,7 @@ void UImageWithSub_Btn::NativePreConstruct()
 {
 	Super::NativePreConstruct();
 	SelectedImage->SetVisibility(ESlateVisibility::Hidden);
+	HoveredImage->SetVisibility(ESlateVisibility::Hidden);
 }
 
 void UImageWithSub_Btn::NativeConstruct()

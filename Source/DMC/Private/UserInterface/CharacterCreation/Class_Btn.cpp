@@ -14,12 +14,12 @@ void UClass_Btn::NativeOnInitialized()
 {
 	Super::NativeOnInitialized();
 
-	if(TooltipClass)
-	{
-		UClassDescriptionTooltip* Tooltip = CreateWidget<UClassDescriptionTooltip>(this, TooltipClass);
-		Tooltip->SetReferencedClass(Class);
-		SetToolTip(Tooltip);
-	}
+	// if(TooltipClass)
+	// {
+	// 	UClassDescriptionTooltip* Tooltip = CreateWidget<UClassDescriptionTooltip>(this, TooltipClass);
+	// 	Tooltip->SetReferencedClass(Class);
+	// 	SetToolTip(Tooltip);
+	// }
 }
 
 void UClass_Btn::NativePreConstruct()
@@ -31,7 +31,7 @@ void UClass_Btn::NativePreConstruct()
 void UClass_Btn::NativeConstruct()
 {
 	Super::NativeConstruct();
-	SetClass(Class);
+	//SetClass(Class);
 }
 
 void UClass_Btn::SetIsSelected(bool IsSelectedIn)

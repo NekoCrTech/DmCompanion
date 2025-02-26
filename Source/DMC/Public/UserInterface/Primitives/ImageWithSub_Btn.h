@@ -49,8 +49,11 @@ protected:
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, meta=(BindWidget), Category = "Components")
 	UImage* SelectedImage;
 
-	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Components|Tooltip")
-	TSubclassOf<UDescriptionTooltip> TooltipClass;
+	UPROPERTY(EditAnywhere,BlueprintReadWrite, meta=(BindWidget), Category = "Components")
+	UImage* HoveredImage;
+
+	// UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Components|Tooltip")
+	// TSubclassOf<UDescriptionTooltip> TooltipClass;
 	
 	//=====================================================================================
 	//									FUNCTIONS
