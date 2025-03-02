@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "Attribute.generated.h"
 
 UENUM(BlueprintType)
@@ -15,6 +14,14 @@ enum class EAttribute : uint8
 	Intelligence UMETA(DisplayName = "Intelligence"),
 	Wisdom       UMETA(DisplayName = "Wisdom"),
 	Charisma     UMETA(DisplayName = "Charisma")
+};
+
+UENUM(BlueprintType)
+enum class EAttributeDestribution : uint8
+{
+	PointBuy     UMETA(DisplayName = "Point Buy"),
+	SetPoints    UMETA(DisplayName = "Set Points"),
+	Random		UMETA(DisplayName = "Random (4d6)"),
 };
 
 
@@ -30,7 +37,10 @@ struct FAttributeScore  : public FTableRowBase
 	int32 BaseValue;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
-	TMap<FGameplayTag, int32> AttributeBonuses;
+	bool bIsProficient;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	TMap<FString, int32> AttributeBonuses;
 };
 
 USTRUCT(BlueprintType)
