@@ -8,6 +8,8 @@
 #include "ClassData.generated.h"
 
 
+enum class ESkill : uint8;
+
 USTRUCT(BlueprintType)
 struct FFeaturesAtLevel : public FTableRowBase
 {
@@ -45,5 +47,11 @@ struct FCharacterClassData : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
 	TArray<FFeaturesAtLevel> FeaturesAtLevels;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
+	int32 ProfSkills;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Class")
+	TArray<ESkill> AvailableSkills;
 };
 

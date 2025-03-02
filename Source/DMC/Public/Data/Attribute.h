@@ -21,7 +21,7 @@ enum class EAttributeDestribution : uint8
 {
 	PointBuy     UMETA(DisplayName = "Point Buy"),
 	SetPoints    UMETA(DisplayName = "Set Points"),
-	Random		UMETA(DisplayName = "Random (4d6)"),
+	Random		UMETA(DisplayName = "Random 4d6)"),
 };
 
 
