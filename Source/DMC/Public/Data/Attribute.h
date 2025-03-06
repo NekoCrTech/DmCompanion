@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameplayTagContainer.h"
 #include "Attribute.generated.h"
 
 UENUM(BlueprintType)
@@ -15,6 +14,14 @@ enum class EAttribute : uint8
 	Intelligence UMETA(DisplayName = "Intelligence"),
 	Wisdom       UMETA(DisplayName = "Wisdom"),
 	Charisma     UMETA(DisplayName = "Charisma")
+};
+
+UENUM(BlueprintType)
+enum class EAttributeDestribution : uint8
+{
+	PointBuy     UMETA(DisplayName = "Point Buy"),
+	SetPoints    UMETA(DisplayName = "Set Points"),
+	Random		UMETA(DisplayName = "Random 4d6)"),
 };
 
 
@@ -30,41 +37,32 @@ struct FAttributeScore  : public FTableRowBase
 	int32 BaseValue;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
-	TMap<FGameplayTag, int32> AttributeBonuses;
+	bool bIsProficient;
 
-	// Function to calculate total attribute value
-	int32 GetTotalValue() const
-	{
-		int32 Bonus = 0;
-		for (const TTuple<FGameplayTag, int32>& ThisBonus : AttributeBonuses)
-		{
-			Bonus += ThisBonus.Value;
-		}
-		return BaseValue + Bonus;
-	}
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	TMap<FString, int32> AttributeBonuses;
+};
 
-	// Function to calculate attribute modifier
-	int32 GetModifier() const
-	{
-		return (GetTotalValue() - 10) / 2;
-	}
+USTRUCT(BlueprintType)
+struct FAttributes : public FTableRowBase
+{
+	GENERATED_BODY()
 
-	// Add attribute bonus
-	void AddAttributeBonus(FGameplayTag BonusTag, int32 BonusValue)
-	{
-		if (AttributeBonuses.Contains(BonusTag))
-		{
-			AttributeBonuses[BonusTag] += BonusValue;
-		}
-		else
-		{
-			AttributeBonuses.Add(BonusTag, BonusValue);
-		}
-	}
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Strength;
 
-	// Remove attribute bonus
-	void RemoveAttributeBonus(FGameplayTag BonusTag)
-	{
-		AttributeBonuses.Remove(BonusTag);
-	}
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Dexterity;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Constitution;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Intelligence;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Wisdom;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attribute")
+	FAttributeScore Charisma;
 };

@@ -29,10 +29,22 @@ struct FCharacterRace : public FTableRowBase
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	ECharacterRace Race = ECharacterRace::Dragonborn;
+	FString Name;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString Info;
+	ECharacterRace Race = ECharacterRace::Dragonborn;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FString SubRace = FString("");
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText Info;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText AgeText;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	FText SizeText;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TMap<EAttribute, int32> AttributeScores;
@@ -54,4 +66,7 @@ struct FCharacterRace : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString Source;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UTexture2D* Texture;
 };

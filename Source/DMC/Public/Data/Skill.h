@@ -45,40 +45,7 @@ struct FSkill : public FTableRowBase
 	bool bIsProficient = false;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
-	int32 PassiveValue = 10; // Default passive value
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
-	TMap<FGameplayTag, int32> SkillBonuses;
-
-	// Function to calculate skill value
-	int32 GetSkillValue(int32 AttributeModifier, int32 ProficiencyBonus) const
-	{
-		int32 Bonus = 0;
-		for (const TTuple<FGameplayTag, int32> ThisBonus : SkillBonuses)
-		{
-			Bonus += ThisBonus.Value;
-		}
-		return AttributeModifier + Bonus + (bIsProficient ? ProficiencyBonus : 0);
-	}
-
-	// Add a skill bonus
-	void AddSkillBonus(FGameplayTag BonusTag, int32 BonusValue)
-	{
-		if (SkillBonuses.Contains(BonusTag))
-		{
-			SkillBonuses[BonusTag] += BonusValue;
-		}
-		else
-		{
-			SkillBonuses.Add(BonusTag, BonusValue);
-		}
-	}
-
-	// Remove a skill bonus
-	void RemoveSkillBonus(FGameplayTag BonusTag)
-	{
-		SkillBonuses.Remove(BonusTag);
-	}
+	TMap<FString, int32> SkillBonuses;
 };
 
 USTRUCT(BlueprintType)
@@ -94,6 +61,66 @@ struct FSkillDescription : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
 	FText Description;
+};
+
+USTRUCT(BlueprintType)
+struct FSkills : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Acrobatics;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill AnimalHandling;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Arcana;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Athletics;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Deception;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill History;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Insight;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Intimidation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Investigation;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Medicine;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Nature;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Perception;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Performance;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Persuasion;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Religion;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill SleightOfHand;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Stealth;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skill")
+	FSkill Survival;
 };
 
 
