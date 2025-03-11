@@ -22,4 +22,7 @@ public:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, meta=(BindWidget), Category = "Components")
 	UTextBlock* Description;
+
+	UFUNCTION(BlueprintCallable)
+	void SetTitleAndDescription(FText TitleIn, FText DescriptionIn);
 };

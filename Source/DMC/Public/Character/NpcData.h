@@ -7,6 +7,18 @@
 #include "Enums/CharacterAlignment.h"
 #include "NpcData.generated.h"
 
+USTRUCT()
+struct FNpcInfo : public FTableRowBase
+{
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	FText Name;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	FText Description;
+};
+
 USTRUCT(BlueprintType)
 struct FNpcData  : public FTableRowBase
 {
@@ -41,4 +53,7 @@ struct FNpcData  : public FTableRowBase
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	float ChallengeRating;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	TArray<FNpcInfo> NpcInfos;
 };
