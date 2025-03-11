@@ -27,8 +27,21 @@ struct FCharacterSheet  : public FTableRowBase
 	FAttributes Attributes;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
+	int32 ArmorClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
+	int32 HitPoints;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
 	FSkills Skills;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Skills")
 	FGameplayTagContainer SkillsProficiencies;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Images")
+	UTexture2D* TokenImage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Images")
+	UTexture2D* CharacterImage;
+	
 };
