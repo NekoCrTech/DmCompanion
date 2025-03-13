@@ -25,10 +25,12 @@ public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VillageManager")
 	TObjectPtr<ABuildingActor> SelectedBuilding;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "VillageManager")
+	TMap<FString, FNpcData> Npcs;
 	
 	AVillageManager();
 	virtual void Tick(float DeltaTime) override;
-	
 
 	UFUNCTION(BlueprintCallable, Category = "VillageManager")
 	void UpdateHoveredBuilding(ABuildingActor* NewHoveredBuilding);

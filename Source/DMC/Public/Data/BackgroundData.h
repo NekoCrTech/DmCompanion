@@ -13,7 +13,7 @@ struct FBackgroundData : public FTableRowBase
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Background")
-	FText Name;
+	FText Name = FText::FromString(TEXT("Name"));
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Background")
 	FFeatureData Feature;

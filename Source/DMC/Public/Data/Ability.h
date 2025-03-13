@@ -11,8 +11,8 @@ struct FAbility : public FTableRowBase
 	GENERATED_BODY()
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString Name;
+	FString Name = TEXT("");
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	FString Description;	
+	FString Description = TEXT("");	
 };
