@@ -56,4 +56,10 @@ struct FNpcData  : public FTableRowBase
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	TArray<FNpcInfo> NpcInfos;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	FString VisitorAt;
+
+	UPROPERTY(EditAnywhere,BlueprintReadWrite)
+	FString OccupantAt;
 };

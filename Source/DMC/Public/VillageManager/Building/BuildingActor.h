@@ -34,6 +34,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Building")
 	bool bIsSelected;
 
+	UFUNCTION(BlueprintCallable, BlueprintPure, Category = "Building")
+	FORCEINLINE FString GetBuildingName() {return BuildingData.Name;}
+
 protected:
 	virtual void BeginPlay() override;
 
