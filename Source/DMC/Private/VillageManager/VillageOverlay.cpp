@@ -11,6 +11,7 @@ void UVillageOverlay::SetVillage(FVillageData VillageDataIn, AVillageManager* Vi
 	VillageData = VillageDataIn;
 	VillageManagerRef = VillageManager;
 	VillageName->SetText(FText::FromString(VillageData.Name));
+	OnVillageManagerSet();
 }
 
 void UVillageOverlay::SetBuilding(FBuildingData BuildingDataIn)
@@ -24,3 +25,4 @@ void UVillageOverlay::HideBuildingName()
 {
 	BuildingBorder->SetVisibility(ESlateVisibility::Hidden);
 }
+

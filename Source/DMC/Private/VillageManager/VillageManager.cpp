@@ -24,11 +24,6 @@ void AVillageManager::UpdateHoveredBuilding(ABuildingActor* NewHoveredBuilding)
 	HoveredBuilding = NewHoveredBuilding;
 }
 
-void AVillageManager::UpdateSelectedBuilding(ABuildingActor* NewSelectedBuilding)
-{
-	SelectedBuilding = NewSelectedBuilding;
-}
-
 // Called every frame
 void AVillageManager::Tick(float DeltaTime)
 {

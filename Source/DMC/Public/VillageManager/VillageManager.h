@@ -35,9 +35,6 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VillageManager")
 	void UpdateHoveredBuilding(ABuildingActor* NewHoveredBuilding);
 
-	UFUNCTION(BlueprintCallable, Category = "VillageManager")
-	void UpdateSelectedBuilding(ABuildingActor* NewSelectedBuilding);
-
 protected:
 	virtual void BeginPlay() override;
 	

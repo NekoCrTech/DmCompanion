@@ -49,5 +49,6 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void HideBuildingName();
 	
-	
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnVillageManagerSet();
 };
