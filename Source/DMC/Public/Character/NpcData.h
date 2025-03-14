@@ -34,19 +34,19 @@ struct FNpcData  : public FTableRowBase
 	FString NpcClass;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	ECreatureType CreatureType;
+	ECreatureType CreatureType = ECreatureType::Humanoid;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	ESize Size;
+	ESize Size = ESize::Medium;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	ECharacterAlignment Alignment;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	int32 HitDiceCount;
+	int32 HitDiceCount = 1;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
-	int32 Speed;
+	int32 Speed = 30;
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite)
 	int32 FlySpeed = 0;

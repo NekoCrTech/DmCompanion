@@ -27,7 +27,7 @@ struct FCharacterSheet  : public FTableRowBase
 	FAttributes Attributes;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
-	int32 ArmorClass;
+	int32 ArmorClass = 10;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Attributes")
 	int32 HitPoints;
