@@ -75,3 +75,6 @@ Plugins/*
 # Cache files for the editor to use
 DerivedDataCache/*
 /Plugins
+
+# Raw Content
+RawContent/*
